@@ -11,12 +11,15 @@ export class NewsComponent implements OnInit {
   constructor(private myapi:ApiService) { 
     this.fetchData()
   }
+  status:boolean=false
   fetchData=()=>{
     this.myapi.viewNews().subscribe((data)=>{
       this.newsData=data
+      this.status=true
     })
   }
-  newsData:any={}
+  newsData:any={}               
+            
   ngOnInit(): void {
   }
 
